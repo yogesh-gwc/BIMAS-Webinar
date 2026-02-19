@@ -29,9 +29,7 @@ const Index = () => (
     <HostsSession />
     <AudienceSection />
     <CTASection />
-    <footer className="py-8 text-center text-sm text-muted-foreground border-t">
-      © {new Date().getFullYear()} GWC. All rights reserved.
-    </footer>
+    
   </main>
 );
 

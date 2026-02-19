@@ -34,11 +34,11 @@ const hosts: HostProps[] = [
 
 const HostsSession = () => {
   return (
-    <section className="py-20 px-4 bg-gradient-to-b from-background via-background to-accent/5 relative overflow-hidden">
-      {/* Background decorative elements */}
+    <section className="py-12 md:py-20 px-4 bg-gradient-to-b from-background via-background to-accent/5 relative overflow-hidden">
+      {/* Background decorative elements - reduced size on mobile */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-40 left-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-40 right-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+        <div className="absolute top-20 left-10 md:top-40 md:left-20 w-48 h-48 md:w-96 md:h-96 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 md:bottom-40 md:right-20 w-48 h-48 md:w-96 md:h-96 bg-accent/5 rounded-full blur-3xl" />
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -48,19 +48,16 @@ const HostsSession = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          {/* <span className="inline-block px-4 py-1.5 rounded-full bg-accent/20 text-accent-foreground text-sm font-medium mb-4 tracking-wide">
-            Expert Speakers
-          </span> */}
-          <h2 className="text-4xl md:text-5xl font-bold font-display mb-4">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display mb-4">
             Meet Your <span className="gradient-text">Hosts</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
         </motion.div>
 
         {/* Hosts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 xl:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 xl:gap-12">
           {hosts.map((host, index) => (
             <motion.div
               key={host.name}
@@ -70,62 +67,60 @@ const HostsSession = () => {
               viewport={{ once: true }}
               className="group h-full"
             >
-              <div className="bg-card rounded-2xl shadow-xl overflow-hidden border border-border hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col">
-                {/* Card Header with Square Image */}
-                <div className="flex flex-col md:flex-row items-start gap-4 p-6">
-                  {/* Square Image Container - No blur, no overlays */}
-                  <div className="w-full md:w-40 h-40 md:h-50 flex-shrink-0 rounded-lg overflow-hidden border border-border">
+              <div className="bg-card rounded-xl md:rounded-2xl shadow-lg md:shadow-xl overflow-hidden border border-border hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 md:hover:-translate-y-2 h-full flex flex-col">
+                {/* Card Header with Square Image - Optimized for mobile */}
+                <div className="flex flex-col md:flex-row items-start gap-3 md:gap-4 p-4 md:p-6">
+                  {/* Square Image Container - Smaller on mobile */}
+                  <div className="w-24 h-24 md:w-40 md:h-40 flex-shrink-0 rounded-lg overflow-hidden border border-border mx-auto md:mx-0">
                     <img 
                       src={host.imageUrl} 
                       alt={host.name}
-                      className="w-full object-cover object-center"
+                      className="w-full  object-cover object-center"
                     />
                   </div>
 
-                  {/* Name, Title, and LinkedIn Icon */}
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mt-8">
-                      <div className="flex flex-col ">
-                        <h3 className="text-2xl font-bold text-foreground mb-1">
+                  {/* Name, Title, and LinkedIn Icon - Adjusted spacing for mobile */}
+                  <div className="flex-1 w-full md:w-auto">
+                    <div className="flex items-start justify-between mt-0 md:mt-8">
+                      <div className="flex-1">
+                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1 text-center md:text-left">
                           {host.name}
                         </h3>
-                        <p className="text-lg font-semibold text-primary">
+                        <p className="text-base md:text-lg font-semibold text-primary text-center md:text-left">
                           {host.title}
                         </p>
-                        <p className="text-sm text-muted-foreground">
+                        <p className="text-xs md:text-sm text-muted-foreground text-center md:text-left">
                           {host.role}
                         </p>
                       </div>
                       
-                      {/* LinkedIn Icon - Outside image */}
+                      {/* LinkedIn Icon - Repositioned for mobile */}
                       <a
                         href={host.linkedinUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-muted-foreground hover:text-primary transition-colors ml-4"
+                        className="text-muted-foreground hover:text-primary transition-colors ml-2 md:ml-4 mt-1 md:mt-0"
                         aria-label={`${host.name}'s LinkedIn profile`}
                       >
-                        <Linkedin className="w-6 h-6" />
+                        <Linkedin className="w-5 h-5 md:w-6 md:h-6" />
                       </a>
                     </div>
                   </div>
                 </div>
 
-                {/* Card Body with Description */}
-                <div className="px-6 pb-6 pt-0 flex-grow">
-                  <p className="text-foreground/80 leading-relaxed">
+                {/* Card Body with Description - Adjusted text size for mobile */}
+                <div className="px-4 md:px-6 pb-4 md:pb-6 pt-0 flex-grow">
+                  <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
                     "{host.description}"
                   </p>
                 </div>
 
                 {/* Decorative bottom gradient line */}
-                <div className="h-1 w-full bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                <div className="h-0.5 md:h-1 w-full bg-gradient-to-r from-primary/50 via-accent/50 to-primary/50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
               </div>
             </motion.div>
           ))}
         </div>
-
-      
       </div>
     </section>
   );

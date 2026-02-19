@@ -29,7 +29,7 @@ const AutomationSection = () => (
           </div>
         </div>
         <div>
-          <h2 className="text-3xl md:text-4xl font-bold font-display mb-4 text-foreground">
+          <h2 className="text-3xl md:text-4xl font-bold font-display mb-6 text-foreground">
             Governance & Trust
           </h2>
           <ul className="space-y-3">
