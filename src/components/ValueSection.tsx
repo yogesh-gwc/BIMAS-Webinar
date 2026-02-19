@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Zap, DollarSign, BookOpen } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const pillars = [
   {
@@ -62,7 +64,10 @@ const ValueSection = () => (
             </h3>
             <ul className="space-y-2">
               {p.items.map((item) => (
-                <li key={item} className="text-sm text-muted-foreground flex items-start gap-2">
+                <li
+                  key={item}
+                  className="text-sm text-muted-foreground flex items-start gap-2"
+                >
                   <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1.5 shrink-0" />
                   {item}
                 </li>
@@ -70,6 +75,16 @@ const ValueSection = () => (
             </ul>
           </motion.div>
         ))}
+      </div>
+      <div className="flex justify-center mt-12">
+        <Link to="/registration">
+          <Button
+            size="lg"
+            className="text-base px-8 py-6 rounded-lg shadow-lg shadow-primary/20"
+          >
+            Register for the Webinar
+          </Button>
+        </Link>
       </div>
     </div>
   </section>

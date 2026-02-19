@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
+import { Button } from "./ui/button";
+import { Link } from "react-router-dom";
 
 const adoptionPoints = [
   "Implemented across multiple enterprise customers",
@@ -29,6 +31,17 @@ const ProductionSection = () => (
               </li>
             ))}
           </ul>
+        </div>
+
+        <div className="flex justify-center mt-12">
+          <Link to="/registration">
+            <Button
+              size="lg"
+              className="text-base px-8 py-6 rounded-lg shadow-lg shadow-primary/20"
+            >
+              Register for the Webinar
+            </Button>
+          </Link>
         </div>
       </motion.div>
     </div>

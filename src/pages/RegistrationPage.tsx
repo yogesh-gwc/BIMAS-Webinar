@@ -131,7 +131,7 @@ const RegistrationPage = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground bg-white/50 dark:bg-slate-800/50 px-3 py-1.5 rounded-full">
                 <Clock className="w-4 h-4" />
-                <span className="text-sm font-medium">4:30 PM IST</span>
+                <span className="text-sm font-medium">3:30 PM IST</span>
               </div>
             </div>
           </div>
