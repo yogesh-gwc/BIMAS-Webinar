@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { CalendarDays, Clock } from "lucide-react";
 import backgroundImg from "../../src/assets/bg-PawXG2Dj.png";
+import { supabase } from "@/lib/supabase";
 
 interface FormData {
   firstName: string;
@@ -22,6 +23,7 @@ interface FormData {
 
 const RegistrationPage = () => {
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
 
   const initialFormState: FormData = {
     firstName: "",
@@ -46,7 +48,6 @@ const RegistrationPage = () => {
   const validateForm = () => {
     const newErrors: Partial<FormData> = {};
       
-
     if (!formData.firstName.trim())
       newErrors.firstName = "First name is required";
     if (!formData.lastName.trim()) newErrors.lastName = "Last name is required";
@@ -67,15 +68,42 @@ const RegistrationPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  //Super Submittion and page navigation
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validateForm()) {
-      // Handle form submission here
-      console.log("Form submitted:", formData);
-      // You can add API call here
-      // Then navigate to success page or show success message
-      alert("Registration successful!");
-      navigate("/");
+    setLoading(true);
+
+    if (!validateForm()) return;
+  
+    try {
+      const { error } = await supabase.from("contacts").insert([
+        {
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          mobile_number: formData.mobileNumber,
+          organization: formData.organization,
+          job_title: formData.jobTitle,
+          industry: formData.industry,
+          purpose: formData.purpose,
+        },
+      ]);
+  
+      if (error) {
+        console.error("Insert Error:", error.message);
+        alert("Something went wrong. Please try again.");
+        return;
+      }
+  
+      // Success
+      setFormData(initialFormState);
+      navigate("/success");
+  
+    } catch (err) {
+      console.error("Unexpected Error:", err);
+      alert("Unexpected error occurred.");
+    }finally{
+      setLoading(false);
     }
   };
 

@@ -29,7 +29,6 @@ const Index = () => (
     <HostsSession />
     <AudienceSection />
     <CTASection />
-    
   </main>
 );
 

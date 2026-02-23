@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import RegistrationPage from "./pages/RegistrationPage";
 import ScrollToTop from "./components/ScrollToTop";
+import SuccessPage from "./pages/SuccessPage";
 
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
         <Route path="/registration" element={<RegistrationPage />} />
+        <Route path="/success" element={<SuccessPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
