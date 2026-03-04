@@ -17,7 +17,7 @@ const OverviewSection = () => (
             BIMAAS is an AI-assisted migration framework built by GWC to help
             enterprises migrate analytics assets across BI platforms with speed,
             accuracy, and governance. Rather than treating migration as a
-            one-time technical exercise, BIMAS introduces a repeatable,
+            one-time technical exercise, BIMAAS introduces a repeatable,
             auditable, and intelligence-driven approach that preserves business
             logic, calculations, and dashboard intent across platforms.
           </p>
