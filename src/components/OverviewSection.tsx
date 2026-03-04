@@ -14,7 +14,7 @@ const OverviewSection = () => (
         </h2>
         <div className="bg-card rounded-xl border p-8 md:p-10 shadow-sm">
           <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-            BIMAS is an AI-assisted migration framework built by GWC to help
+            BIMAAS is an AI-assisted migration framework built by GWC to help
             enterprises migrate analytics assets across BI platforms with speed,
             accuracy, and governance. Rather than treating migration as a
             one-time technical exercise, BIMAS introduces a repeatable,

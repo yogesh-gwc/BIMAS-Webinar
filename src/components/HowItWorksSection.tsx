@@ -32,7 +32,7 @@ const HowItWorksSection = () => (
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold font-display mb-3 text-foreground">
-          How BIMAS Works — End-to-End
+          How BIMAAS Works — End-to-End
         </h2>
         <p className="text-muted-foreground mb-10 max-w-2xl">
           A structured, three-step flow from connection to blueprint.

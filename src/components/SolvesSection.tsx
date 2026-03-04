@@ -18,10 +18,10 @@ const SolvesSection = () => (
         transition={{ duration: 0.5 }}
       >
         <h2 className="text-3xl md:text-4xl font-bold font-display mb-3 text-foreground">
-          What BIMAS Solves
+          What BIMAAS Solves
         </h2>
         <p className="text-muted-foreground mb-10 max-w-2xl text-base">
-          BIMAS eliminates uncertainty in BI migrations by combining automation,
+          BIMAAS eliminates uncertainty in BI migrations by combining automation,
           selective AI, and human validation into a governed execution framework.
         </p>
       </motion.div>

@@ -27,7 +27,7 @@ const HeroSection = () => {
           </span>
 
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold font-display leading-tight mb-4 text-foreground">
-            BIMAS – BI Migration{" "}
+            BIMAAS – BI Migration{" "}
             <span className="gradient-text">Accelerator as a Service</span>
           </h1>
           <p className="text-mg md:text-lg text-muted-foreground font-medium mb-6 leading-relaxed">
@@ -35,7 +35,7 @@ const HeroSection = () => {
           </p>
           <p className="text-base md:text-lg text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
             A structured, AI-assisted framework for migrating analytics across
-            BI platforms. BIMAS enables organizations to modernize analytics
+            BI platforms. BIMAAS enables organizations to modernize analytics
             safely by reducing migration effort, cost, and operational risk
             without locking into a single BI tool.
           </p>
